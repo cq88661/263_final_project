@@ -1,0 +1,167 @@
+[
+  {
+    "id": "MATH_TEST_1",
+    "type": "open-ended",
+    "question": "What is the range of the function $f(x) = \\frac{1}{x^2}$?",
+    "choices": null,
+    "answer": "(0,\\infty)",
+    "explanation": "Note that $f(x) = \\frac{1}{x^2} >0$ for all nonzero $x$. That is, the range of $f$ must only include positive numbers. Conversely, if $a$ is a positive number, then \\[f\\left(\\frac{1}{\\sqrt{a}}\\right)=\\frac{1}{(1/\\sqrt{a})^2} = a,\\]so $a$ is indeed in the range of $f$. Thus, the range of $f$ is the set of all positive real numbers; in interval notation, that's $\\boxed{(0,\\infty)}$.",
+    "difficulty": "Level 5",
+    "category": "algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_2",
+    "type": "open-ended",
+    "question": "Given that\n\n\\begin{align*}\n\\frac{1}{x}+\\frac{1}{y}&=3,\\\\\nxy+x+y&=4,\n\\end{align*}\n\ncompute $x^2y+xy^2$.",
+    "choices": null,
+    "answer": "3",
+    "explanation": "The first equation becomes\n\n$$\\frac{x+y}{xy}=3\\Rightarrow x+y=3xy$$\n\nSubstituting into the second equation,\n\n$$4xy=4\\Rightarrow xy=1$$\n\nThus $x+y=3$.\n\nThe quantity we desire factors as $xy(x+y)$, so it is equal to $1(3)=\\boxed{3}$.",
+    "difficulty": "Level 5",
+    "category": "algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_3",
+    "type": "open-ended",
+    "question": "The circle centered at $(2,-1)$ and with radius $4$ intersects the circle centered at $(2,5)$ and with radius $\\sqrt{10}$ at two points $A$ and $B$. Find $(AB)^2$.",
+    "choices": null,
+    "answer": "15",
+    "explanation": "Writing out the equations of the circles, we have that:  \\begin{align*}\n(x-2)^2+(y+1)^2 &= 16 \\\\\n(x-2)^2+(y-5)^2 &= 10\n\\end{align*}To solve for the common $y$ value of both $A$ and $B$, we can subtract the two equations to find that $(y+1)^2 - (y-5)^2 = 6$. Simplifying gives that $(y+1)^2 - (y-5)^2 = 2y + 1 + 10y - 25 = 12y - 24 = 6,$ so that $y = \\frac{30}{12} = \\frac {5}2$. Substituting back into either of the above circle equations yields that $(x-2)^2 = \\frac{15}{4}$. Thus, $x - 2 = \\pm \\frac{\\sqrt{15}}{2}$, so $x = 2 \\pm \\frac{\\sqrt{15}}{2}$. The distance between $A$ and $B$ is simply the difference of their x-coordinates, or $$\\left(2 + \\frac{\\sqrt{15}}{2}\\right) - \\left(2 - \\frac{\\sqrt{15}}{2}\\right) = \\sqrt{15}.$$Thus $(AB)^2=(\\sqrt{15})^2=\\boxed{15}$.\n\n[asy]import graph; size(8.16cm); real lsf=0.5; pen dps=linewidth(0.7)+fontsize(10); defaultpen(dps); pen ds=black; real xmin=-4.42,xmax=9.18,ymin=-5.66,ymax=8.79; \n\nLabel laxis; laxis.p=fontsize(10);\n\nxaxis(\"$x$\",xmin,xmax,Ticks(laxis,Step=2.0,Size=2,OmitTick(0)),Arrows(6),above=true); yaxis(\"$y$\",ymin,ymax,Ticks(laxis,Step=2.0,Size=2),Arrows(6),above=true); draw(circle((2,5),3.16)); draw(circle((2,-1),4)); draw((0.06,2.5)--(3.94,2.5),linewidth(1.2)+green);\n\ndot((2,-1),ds); label(\"$(2, -1)$\",(2.18,-1.57),NE*lsf); dot((2,5),ds); label(\"$(2, 5)$\",(2.18,5.23),NE*lsf); dot((0.06,2.5),ds); label(\"$A$\",(0.24,2.76),NE*lsf); dot((3.94,2.5),ds); label(\"$B$\",(3.6,2.88),NE*lsf);\n\nclip((xmin,ymin)--(xmin,ymax)--(xmax,ymax)--(xmax,ymin)--cycle);\n\n[/asy]",
+    "difficulty": "Level 5",
+    "category": "algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_4",
+    "type": "open-ended",
+    "question": "We have a standard deck of 52 cards, with 4 cards in each of 13 ranks.  We call a 5-card poker hand a full house if the hand has 3 cards of one rank and 2 cards of another rank (such as 33355 or AAAKK).  What is the probability that five cards chosen at random form a full house?",
+    "choices": null,
+    "answer": "\\frac{6}{4165}",
+    "explanation": "The total number of outcomes is just the number of ways to choose 5 cards from a set of 52, which is $\\binom{52}{5} = 2,\\!598,\\!960$.  Notice that in this count, we don't care about the order in which the cards are chosen.\n\nTo count the number of successful outcomes, we turn to constructive counting, thinking about how we'd construct a full house.\n\nTo form a full house, we have to choose:\n\nA rank for the 3 cards.  This can be done in 13 ways.\n\n3 of the 4 cards of that rank.  This can be done in $\\binom{4}{3} = 4$ ways.\n\nA rank for the other 2 cards.  This can be done in 12 ways (since we can't choose the rank that we chose in (a)).\n\n2 of the 4 cards of that rank.  This can be done in $\\binom{4}{2} = 6$ ways.\n\nAgain, note that in each of the steps in our constructive count, we don't care about the order in which the cards are chosen.\n\nSo there are $13 \\times 4 \\times 12 \\times 6 = 3,\\!744$ full houses.  Thus, the probability is $$ \\frac{3,\\!744}{2,\\!598,\\!960} = \\boxed{\\frac{6}{4165}}. $$",
+    "difficulty": "Level 5",
+    "category": "counting_and_probability",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_5",
+    "type": "open-ended",
+    "question": "A boss plans a business meeting at Starbucks with the two engineers below him. However, he fails to set a time, and all three arrive at Starbucks at a random time between 2:00 and 4:00 p.m. When the boss shows up, if both engineers are not already there, he storms out and cancels the meeting. Each engineer is willing to stay at Starbucks alone for an hour, but if the other engineer has not arrived by that time, he will leave. What is the probability that the meeting takes place?",
+    "choices": null,
+    "answer": "\\frac{7}{24}",
+    "explanation": "Let the number of hours after 2:00 p.m. that the two engineers arrive at Starbucks be $x$ and $y$, and let the number of hours after 2:00 p.m. that the boss arrives at Starbucks be $z$. Then $0\\le x,y,z\\le2$ and in three dimensions, we are choosing a random point within this cube with volume 8. We must have $z>x$ and $z>y$; this forms a square pyramid with base area 4 and height 2, or volume $8/3$.\n[asy]\nunitsize(1 cm);\n\npair O, A, B, C, D, E, F, G, X, Y, Z;\nreal d1, d2; d1=20;\n\nreal dis=1.2;\nO = (0,0);\nA = (2,0);\nB = (2,2);\nC = (0,2);\nD = A+dis*dir(d1);\nG = O+dis*dir(d1);\nE = B+dis*dir(d1);\nF = C+dis*dir(d1);\nG = O+dis*dir(d1);\nX = (3,0);\nZ = (0,3);\nY = O+2*dis*dir(d1);\n\nfill(C--B--E--F--cycle,gray(0.8));\nfill(O--E--F--C--cycle,gray(0.8));\ndraw(O--A--B--C--cycle);\ndraw(G--D, dashed);\ndraw(E--F);\ndraw(F--G, dashed);\ndraw(C--F);\ndraw(B--E);\ndraw(A--D);\ndraw(D--E);\ndraw(O--G, dashed);\ndraw(O--X, Arrow);\ndraw(O--Z, Arrow);\ndraw(O--E, red+dashed);\ndraw(C--B--E--F--cycle, red);\ndraw(O--B, red);\ndraw(O--F, red+dashed);\ndraw(O--Y, dashed, Arrow);\n\nlabel(\"$2$\", A, S);\nlabel(\"$2$\", C, W);\nlabel(\"$2$\", G, NW);\nlabel(\"$O$\", O, SW);\nlabel(\"$X$\", X, S);\nlabel(\"$Z$\", Z, W);\nlabel(\"$Y$\", Y, NW);\n[/asy]\nHowever, if one of the engineers decides to leave early, the meeting will fail. The engineers will leave early if $x>y+1$ or $y>x+1$. The intersections of these with our pyramid gives two smaller triangular pyramids each with base area 1/2 and height 1, or volume $1/6$.\n[asy]\nsize(200);\npair O, A, B, C, D, E, F, G, X, Y, Z;\nreal d1, d2; d1=20; d2=150;\nreal dis1, dis2;\ndis1=2; dis2=1.8;\nO = (0,0);\nA = O+dis1*dir(d1);\nC = O+dis2*dir(d2);\nB = A+dis2*dir(d2);\nG = (0,2);\nD = G+dis1*dir(d1);\nF = G+dis2*dir(d2);\nE = D+dis2*dir(d2);\nX = A+.5*dis1*dir(d1);\nY = C+.5*dis2*dir(d2);\nZ = (0,4);\n\nfill(G--D--E--F--cycle, gray(0.8));\nfill(O--F--G--cycle, gray(0.8));\nfill(O--D--G--cycle, gray(0.8));\ndraw(G--D--E--F--cycle);\ndraw(G--O);\ndraw(F--C--O--A--D);\ndraw(A--B--C, dashed);\ndraw(B--E, dashed);\ndraw(O--D, dashed);\ndraw(O--F, dashed);\ndraw(O--X, Arrow);\ndraw(O--Y, Arrow);\ndraw(O--Z, Arrow);\n\nlabel(\"$2$\", A, SE);\nlabel(\"$2$\", C, W);\nlabel(\"$2$\", G, SW);\nlabel(\"$O$\", O, S);\nlabel(\"$X$\", X, SE);\nlabel(\"$Z$\", Z, W);\nlabel(\"$Y$\", Y, W);\nlabel(\"$y=x-1$\", (O+A)/2, SE, red+fontsize(10));\nlabel(\"$y=x+1$\", (O+C)/2, SW, red+fontsize(10));\n\ndraw((G+D)/2--(E+D)/2, red);\ndraw((G+F)/2--(E+F)/2, red);\ndraw((O+C)/2--(C+B)/2, red+dashed);\ndraw((O+A)/2--(A+B)/2, red+dashed);\ndraw((O+C)/2--(G+F)/2, red);\ndraw((C+B)/2--(E+F)/2, red+dashed);\ndraw((O+A)/2--(G+D)/2, red);\ndraw((A+B)/2--(E+D)/2, red+dashed);\n[/asy]\nIn all, the probability of the meeting occurring is the volume of the big square pyramid minus the volumes of the smaller triangular pyramids divided by the volume of the cube: $\\frac{8/3-1/6-1/6}8=\\frac{7/3}8=\\boxed{\\frac{7}{24}}$.",
+    "difficulty": "Level 5",
+    "category": "counting_and_probability",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_6",
+    "type": "open-ended",
+    "question": "A set of $n$ people participate in an online video basketball tournament. Each person may be a member of any number of $5$-player teams, but no two teams may have exactly the same $5$ members. The site statistics show a curious fact: The average, over all subsets of size $9$ of the set of $n$ participants, of the number of complete teams whose members are among those $9$ people is equal to the reciprocal of the average, over all subsets of size $8$ of the set of $n$ participants, of the number of complete teams whose members are among those $8$ people. How many values $n$, $9\\leq n\\leq 2017$, can be the number of participants?\n$\\textbf{(A) } 477 \\qquad \\textbf{(B) } 482 \\qquad \\textbf{(C) } 487 \\qquad \\textbf{(D) } 557 \\qquad \\textbf{(E) } 562$\n",
+    "choices": null,
+    "answer": "557",
+    "explanation": "Let there be $T$ teams. For each team, there are ${n-5\\choose 4}$ different subsets of $9$ players including that full team, so the total number of team-(group of 9) pairs is\n\\[T{n-5\\choose 4}.\\]\nThus, the expected value of the number of full teams in a random set of $9$ players is\n\\[\\frac{T{n-5\\choose 4}}{{n\\choose 9}}.\\]\nSimilarly, the expected value of the number of full teams in a random set of $8$ players is\n\\[\\frac{T{n-5\\choose 3}}{{n\\choose 8}}.\\]\nThe condition is thus equivalent to the existence of a positive integer $T$ such that\n\\[\\frac{T{n-5\\choose 4}}{{n\\choose 9}}\\frac{T{n-5\\choose 3}}{{n\\choose 8}} = 1.\\]\n\\[T^2\\frac{(n-5)!(n-5)!8!9!(n-8)!(n-9)!}{n!n!(n-8)!(n-9)!3!4!} = 1\\]\n\\[T^2 = \\big((n)(n-1)(n-2)(n-3)(n-4)\\big)^2 \\frac{3!4!}{8!9!}\\]\n\\[T^2 = \\big((n)(n-1)(n-2)(n-3)(n-4)\\big)^2 \\frac{144}{7!7!8\\cdot8\\cdot9}\\]\n\\[T^2 = \\big((n)(n-1)(n-2)(n-3)(n-4)\\big)^2 \\frac{1}{4\\cdot7!7!}\\]\n\\[T = \\frac{(n)(n-1)(n-2)(n-3)(n-4)}{2^5\\cdot3^2\\cdot5\\cdot7}\\]\nNote that this is always less than ${n\\choose 5}$, so as long as $T$ is integral, $n$ is a possibility. Thus, we have that this is equivalent to\n\\[2^5\\cdot3^2\\cdot5\\cdot7\\big|(n)(n-1)(n-2)(n-3)(n-4).\\]\nIt is obvious that $5$ divides the RHS, and that $7$ does iff $n\\equiv 0,1,2,3,4\\mod 7$. Also, $3^2$ divides it iff $n\\not\\equiv 5,8\\mod 9$. One can also bash out that $2^5$ divides it in $16$ out of the $32$ possible residues $\\mod 32$.\nUsing all numbers from $2$ to $2017$, inclusive, it is clear that each possible residue $\\mod 7,9,32$ is reached an equal number of times, so the total number of working $n$ in that range is $5\\cdot 7\\cdot 16 = 560$. However, we must subtract the number of \"working\" $2\\leq n\\leq 8$, which is $3$. Thus, the answer is $\\boxed{557}$.",
+    "difficulty": "Level 5",
+    "category": "counting_and_probability",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_7",
+    "type": "open-ended",
+    "question": "Rhombus $PQRS$ is inscribed in rectangle $ABCD$ so that vertices $P$, $Q$, $R$, and $S$ are interior points on sides $\\overline{AB}$, $\\overline{BC}$, $\\overline{CD}$, and $\\overline{DA}$, respectively. It is given that $PB=15$, $BQ=20$, $PR=30$, and $QS=40$. Let $m/n$, in lowest terms, denote the perimeter of $ABCD$. Find $m+n$.\n",
+    "choices": null,
+    "answer": "677",
+    "explanation": "[asy]defaultpen(fontsize(10)+linewidth(0.65)); pair A=(0,28.8), B=(38.4,28.8), C=(38.4,0), D=(0,0), O, P=(23.4,28.8), Q=(38.4,8.8), R=(15,0), S=(0,20); O=intersectionpoint(A--C,B--D); draw(A--B--C--D--cycle);draw(P--R..Q--S); draw(P--Q--R--S--cycle); label(\"\\(A\\)\",A,NW);label(\"\\(B\\)\",B,NE);label(\"\\(C\\)\",C,SE);label(\"\\(D\\)\",D,SW); label(\"\\(P\\)\",P,N);label(\"\\(Q\\)\",Q,E);label(\"\\(R\\)\",R,SW);label(\"\\(S\\)\",S,W); label(\"\\(15\\)\",B/2+P/2,N);label(\"\\(20\\)\",B/2+Q/2,E);label(\"\\(O\\)\",O,SW); [/asy]\nLet $O$ be the center of the rhombus. Via parallel sides and alternate interior angles, we see that the opposite triangles are congruent ($\\triangle BPQ \\cong \\triangle DRS$, $\\triangle APS \\cong \\triangle CRQ$). Quickly we realize that $O$ is also the center of the rectangle.\nBy the Pythagorean Theorem, we can solve for a side of the rhombus; $PQ = \\sqrt{15^2 + 20^2} = 25$. Since the diagonals of a rhombus are perpendicular bisectors, we have that $OP = 15, OQ = 20$. Also, $\\angle POQ = 90^{\\circ}$, so quadrilateral $BPOQ$ is cyclic. By Ptolemy's Theorem, $25 \\cdot OB = 20 \\cdot 15 + 15 \\cdot 20 = 600$.\nBy similar logic, we have $APOS$ is a cyclic quadrilateral. Let $AP = x$, $AS = y$. The Pythagorean Theorem gives us $x^2 + y^2 = 625\\quad \\mathrm{(1)}$. Ptolemy’s Theorem gives us $25 \\cdot OA = 20x + 15y$. Since the diagonals of a rectangle are equal, $OA = \\frac{1}{2}d = OB$, and $20x + 15y = 600\\quad \\mathrm{(2)}$. Solving for $y$, we get $y = 40 - \\frac 43x$. Substituting into $\\mathrm{(1)}$,\n\\begin{eqnarray*}x^2 + \\left(40-\\frac 43x\\right)^2 &=& 625\\\\ 5x^2 - 192x + 1755 &=& 0\\\\ x = \\frac{192 \\pm \\sqrt{192^2 - 4 \\cdot 5 \\cdot 1755}}{10} &=& 15, \\frac{117}{5}\\end{eqnarray*}\nWe reject $15$ because then everything degenerates into squares, but the condition that $PR \\neq QS$ gives us a contradiction. Thus $x = \\frac{117}{5}$, and backwards solving gives $y = \\frac{44}5$. The perimeter of $ABCD$ is $2\\left(20 + 15 + \\frac{117}{5} + \\frac{44}5\\right) = \\frac{672}{5}$, and $m + n = \\boxed{677}$.",
+    "difficulty": "Level 5",
+    "category": "geometry",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_8",
+    "type": "open-ended",
+    "question": "Triangle $ABC$ has side lengths $AB=120,BC=220$, and $AC=180$. Lines $\\ell_A,\\ell_B$, and $\\ell_C$ are drawn parallel to $\\overline{BC},\\overline{AC}$, and $\\overline{AB}$, respectively, such that the intersections of $\\ell_A,\\ell_B$, and $\\ell_C$ with the interior of $\\triangle ABC$ are segments of lengths $55,45$, and $15$, respectively. Find the perimeter of the triangle whose sides lie on lines $\\ell_A,\\ell_B$, and $\\ell_C$.\n",
+    "choices": null,
+    "answer": "715",
+    "explanation": "Let the points of intersection of $\\ell_a, \\ell_b,\\ell_c$ with $\\triangle ABC$ divide the sides into consecutive segments $BD,DE,EC,CF,FG,GA,AH,HI,IB$. Furthermore, let the desired triangle be $\\triangle XYZ$, with $X$ closest to side $BC$, $Y$ closest to side $AC$, and $Z$ closest to side $AB$. Hence, the desired perimeter is $XE+EF+FY+YG+GH+HZ+ZI+ID+DX=(DX+XE)+(FY+YG)+(HZ+ZI)+115$ since $HG=55$, $EF=15$, and $ID=45$.\nNote that $\\triangle AHG\\sim \\triangle BID\\sim \\triangle EFC\\sim \\triangle ABC$, so using similar triangle ratios, we find that $BI=HA=30$, $BD=HG=55$, $FC=\\frac{45}{2}$, and $EC=\\frac{55}{2}$.\nWe also notice that $\\triangle EFC\\sim \\triangle YFG\\sim \\triangle EXD$ and $\\triangle BID\\sim \\triangle HIZ$. Using similar triangles, we get that\\[FY+YG=\\frac{GF}{FC}\\cdot \\left(EF+EC\\right)=\\frac{225}{45}\\cdot \\left(15+\\frac{55}{2}\\right)=\\frac{425}{2}\\]\\[DX+XE=\\frac{DE}{EC}\\cdot \\left(EF+FC\\right)=\\frac{275}{55}\\cdot \\left(15+\\frac{45}{2}\\right)=\\frac{375}{2}\\]\\[HZ+ZI=\\frac{IH}{BI}\\cdot \\left(ID+BD\\right)=2\\cdot \\left(45+55\\right)=200\\]Hence, the desired perimeter is $200+\\frac{425+375}{2}+115=600+115=\\boxed{715}$.",
+    "difficulty": "Level 5",
+    "category": "geometry",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_9",
+    "type": "open-ended",
+    "question": "A quadrilateral that has consecutive sides of lengths $70,90,130$ and $110$ is inscribed in a circle and also has a circle inscribed in it. The point of tangency of the inscribed circle to the side of length 130 divides that side into segments of length $x$ and $y$. Find $|x-y|$.\n$\\text{(A) } 12\\quad \\text{(B) } 13\\quad \\text{(C) } 14\\quad \\text{(D) } 15\\quad \\text{(E) } 16$\n",
+    "choices": null,
+    "answer": "13",
+    "explanation": "Let $A$, $B$, $C$, and $D$ be the vertices of this quadrilateral such that $AB=70$, $BC=110$, $CD=130$, and $DA=90$. Let $O$ be the center of the incircle. Draw in the radii from the center of the incircle to the points of tangency. Let these points of tangency $X$, $Y$, $Z$, and $W$ be on $AB$, $BC$, $CD$, and $DA$, respectively. Using the right angles and the fact that the $ABCD$ is cyclic, we see that quadrilaterals $AXOW$ and $OYCZ$ are similar.\nLet $CZ$ have length $n$. Chasing lengths, we find that $AX=AW=n-40$. Using Brahmagupta's Formula we find that $ABCD$ has area $K=300\\sqrt{1001}$ and from that we find, using that fact that $rs=K$, where $r$ is the inradius and $s$ is the semiperimeter, $r=\\frac{3}{2}\\sqrt{1001}$.\nFrom the similarity we have\\[\\frac{CY}{OX}=\\frac{OY}{AX}\\]Or, after cross multiplying and writing in terms of the variables,\\[n^2-40n-r^2=0\\]Plugging in the value of $r$ and solving the quadratic gives $n=CZ=71.5$, and from there we compute the desired difference to get $\\boxed{13}$.",
+    "difficulty": "Level 5",
+    "category": "geometry",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_10",
+    "type": "open-ended",
+    "question": "Find the nonconstant polynomial $P(x)$ such that\n\\[P(P(x)) = (x^2 + x + 1) P(x).\\]",
+    "choices": null,
+    "answer": "x^2 + x",
+    "explanation": "Let $d$ be the degree of $P(x).$  Then the degree of $P(P(x))$ is $d^2,$ and the degree of $(x^2 + x + 1) P(x)$ is $d + 2,$ so\n\\[d^2 = d + 2.\\]Then $d^2 - d - 2 = (d - 2)(d + 1) = 0.$  Since $d$ is positive, $d = 2.$\n\nLet $P(x) = ax^2 + bx + c.$  Then\n\\begin{align*}\nP(P(x)) &= a(ax^2 + bx + c)^2 + b(ax^2 + bx + c) + c \\\\\n&= a^3 x^4 + 2a^2 bx^3 + (ab^2 + 2a^2 c + ab) x^2 + (2abc + b^2) x + ac^2 + bc + c\n\\end{align*}and\n\\[(x^2 + x + 1)(ax^2 + bx + c) = ax^4 + (a + b) x^3 + (a + b + c) x^2 + (b + c) x + c.\\]Comparing coefficients, we get\n\\begin{align*}\na^3 &= a, \\\\\n2a^2 b &= a + b, \\\\\nab^2 + 2a^2 c + ab &= a + b + c, \\\\\n2abc + b^2 &= b + c, \\\\\nac^2 + bc + c &= c.\n\\end{align*}From $a^3 = a,$ $a^3 - a = a(a - 1)(a + 1) = 0,$ so $a$ is 0, 1, or $-1.$  But $a$ is the leading coefficient, so $a$ cannot be 0, which means $a$ is 1 or $-1.$\n\nIf $a = 1,$ then $2b = 1 + b,$ so $b = 1.$  Then\n\\[1 + 2c + 1 = 1 + 1 + c,\\]so $c = 0.$  Note that $(a,b,c) = (1,1,0)$ satisfies all the equations.\n\nIf $a = -1,$ then $2b = -1 + b,$ so $b = -1.$  Then\n\\[-1 + 2c + 1 = -1 - 1 + c,\\]so $c = -2.$  But then the equation $ac^2 + bc + c = c$ is not satisfied.\n\nHence, $(a,b,c) = (1,1,0),$ and $P(x) = \\boxed{x^2 + x}.$",
+    "difficulty": "Level 5",
+    "category": "intermediate_algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_11",
+    "type": "open-ended",
+    "question": "A function $f$ is defined on the complex numbers by $f(z)=(a+bi)z,$ where $a$ and $b$ are positive numbers. This function has the property that for each complex number $z$, $f(z)$ is equidistant from both $z$ and the origin. Given that $|a+bi|=8$, find $b^2.$",
+    "choices": null,
+    "answer": "\\frac{255}{4}",
+    "explanation": "From the given property,\n\\[|f(z) - z| = |f(z)|.\\]Then\n\\[|(a + bi) z - z| = |(a + bi)z|,\\]so $|a + bi - 1||z| = |a + bi||z|.$  Since this holds for all complex numbers $z,$\n\\[|a + bi - 1| = |a + bi| = 8.\\]Then $(a - 1)^2 + b^2 = 64$ and $a^2 + b^2 = 64.$  Subtracting these equations, we get $2a - 1 = 0,$ so $a = \\frac{1}{2}.$  Hence,\n\\[b^2 = 64 - a^2 = 64 - \\frac{1}{4} = \\boxed{\\frac{255}{4}}.\\]",
+    "difficulty": "Level 5",
+    "category": "intermediate_algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_12",
+    "type": "open-ended",
+    "question": "Compute the value of the infinite series \\[\n\\sum_{n=2}^{\\infty} \\frac{n^4+3n^2+10n+10}{2^n \\cdot \\left(n^4+4\\right)}\n\\]",
+    "choices": null,
+    "answer": "\\frac{11}{10}",
+    "explanation": "We factor the denominator: \\[n^4+4 = (n^2+2)^2-(2n)^2 = (n^2-2n+2)(n^2+2n+2).\\]Now,\n\n\\begin{eqnarray*}\n\\frac{n^4+3n^2+10n+10}{n^4+4} & = & 1 + \\frac{3n^2+10n+6}{n^4+4} \\\\\n& = & 1 + \\frac{4}{n^2-2n+2} - \\frac{1}{n^2+2n+2} \\\\\n\\Longrightarrow \\sum_{n=2}^{\\infty} \\frac{n^4+3n^2+10n+10}{2^n \\cdot \\left(n^4+4\\right)} & = & \\sum_{n=2}^{\\infty} \\frac{1}{2^n} + \\frac{4}{2^n\\cdot(n^2-2n+2)} - \\frac{1}{2^n\\cdot(n^2+2n+2)} \\\\\n& = & \\frac{1}{2} + \\sum_{n=2}^{\\infty} \\frac{1}{2^{n-2}\\cdot\\left((n-1)^2+1\\right)} - \\frac{1}{2^n\\cdot\\left((n+1)^2+1\\right)}\n\\end{eqnarray*}The last series telescopes to $\\frac{1}{2} + \\frac{1}{10}$; thus, our our desired answer is $\\frac{1}{2} + \\frac{1}{2} + \\frac{1}{10} = \\boxed{\\frac{11}{10}}$.",
+    "difficulty": "Level 5",
+    "category": "intermediate_algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_13",
+    "type": "open-ended",
+    "question": "Natural numbers of the form $F_n=2^{2^n} + 1 $ are called Fermat numbers. In 1640, Fermat conjectured that all numbers $F_n$, where $n\\neq 0$, are prime. (The conjecture was later shown to be false.) What is the units digit of $F_{1000}$?",
+    "choices": null,
+    "answer": "7",
+    "explanation": "Let's first try to find the cycle of units digits of $2^n$, starting with $n=1$: $2, 4, 8, 6, 2, 4, 8, 6,\\ldots$ . The cycle of units digits of $2^n$ is 4 digits long: 2, 4, 8, 6. To find the units digit of $2^n$, for any positive integer $n$, we simply need to find the remainder, $R$, when $n$ is divided by 4 ($R=1$ corresponds to the units digit 2, $R=2$ corresponds to the units digit 4, etc.) Since $2^{1000}\\div4=2^{998}$ without remainder, the units digit of $2^{2^{1000}}$ is 6. Therefore, the units digit of $F_n=2^{2^{1000}}+1$ is $6+1=\\boxed{7}$.",
+    "difficulty": "Level 5",
+    "category": "number_theory",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_14",
+    "type": "open-ended",
+    "question": "For how many values of $k$ is $12^{12}$ the least common multiple of the positive integers $6^6$, $8^8$, and $k$?\n",
+    "choices": null,
+    "answer": "25",
+    "explanation": "It is evident that $k$ has only 2s and 3s in its prime factorization, or $k = 2^a3^b$.\n$6^6 = 2^6\\cdot3^6$\n$8^8 = 2^{24}$\n$12^{12} = 2^{24}\\cdot3^{12}$\nThe LCM of any numbers an be found by writing out their factorizations and taking the greatest power for each factor. $[6^6,8^8] = 2^{24}3^6$. Therefore $12^{12} = 2^{24}\\cdot3^{12} = [2^{24}3^6,2^a3^b] = 2^{\\max(24,a)}3^{\\max(6,b)}$, and $b = 12$. Since $0 \\le a \\le 24$, there are $\\boxed{25}$ values of $k$.",
+    "difficulty": "Level 5",
+    "category": "number_theory",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_TEST_15",
+    "type": "open-ended",
+    "question": "When the base-16 number $66666_{16}$ is written in base 2, how many base-2 digits (bits) does it have?",
+    "choices": null,
+    "answer": "19",
+    "explanation": "We have \\begin{align*}\n66666_{16} &= 6\\cdot 16^4 + 6\\cdot 16^3 + 6\\cdot 16^2 + 6\\cdot 16 + 6 \\\\\n&= 6\\cdot (16^4+16^3+16^2+16+1) \\\\\n&= 6\\cdot (2^{16}+2^{12}+2^8+2^4+1) \\\\\n&= (2^2+2)\\cdot (2^{16}+2^{12}+2^8+2^4+1) \\\\\n&= 2^{18}+2^{17}+2^{14}+2^{13}+2^{10}+2^9+2^6+2^5+2^2+2.\n\\end{align*}Actually, this is more detail than necessary; what is important is that $2^{18} \\le 66666_{16} < 2^{19}$, which tells us that the base-2 expression of this number has $\\boxed{19}$ digits or bits (with place values $2^{18},2^{17},2^{16},\\ldots,2^2,2^1,2^0$).",
+    "difficulty": "Level 5",
+    "category": "number_theory",
+    "source": "hendrycks_math"
+  }
+]
