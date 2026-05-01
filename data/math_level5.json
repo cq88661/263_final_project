@@ -1,0 +1,101 @@
+[
+  {
+    "id": "MATH_1",
+    "type": "open-ended",
+    "question": "Let $f(x) = 3x^2-2$ and $g(f(x)) = x^2 + x +1$.  Find the sum of all possible values of $g(25)$.",
+    "choices": null,
+    "answer": "20",
+    "explanation": "We don't know $g(x)$, so we don't have an expression we can simply stick $25$ in to get an answer. We do, however, know that $g(f(x)) =x^2 + x + 1$.  So, if we can figure out what to put into $f(x)$ such that $25$ is the resulting output, we can use our expression for $g(f(x))$ to find $g(25)$.\n\nIf $f(x) = 25$, then we have $3x^2 - 2 = 25$, so $x^2 = 9$, which means $x=3$ or $x=-3$.  Since $x$ could be $3$ or $-3$, we could have $g(25) = g(f(3))$ or $g(25) = g(f(-3))$.  Using the given expression for $g(f(x))$, the two possible values of $g(25)$ are  $g(f(3)) = 3^2 + 3 + 1 = 13$ and $g(f(-3)) = (-3)^2 + (-3) + 1 = 7$.  The sum of these is $13+7=\\boxed{20}$.",
+    "difficulty": "Level 5",
+    "category": "algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_2",
+    "type": "open-ended",
+    "question": "A portion of the graph of $y = f(x)$ is shown in red below, where $f(x)$ is a quadratic function.  The distance between grid lines is $1$ unit.\n\nWhat is the sum of all distinct numbers $x$ such that $f(f(f(x)))=-3$ ?\n\n[asy]\n\nsize(150);\n\nreal ticklen=3;\n\nreal tickspace=2;\n\nreal ticklength=0.1cm;\n\nreal axisarrowsize=0.14cm;\n\npen axispen=black+1.3bp;\n\nreal vectorarrowsize=0.2cm;\n\nreal tickdown=-0.5;\n\nreal tickdownlength=-0.15inch;\n\nreal tickdownbase=0.3;\n\nreal wholetickdown=tickdown;\n\nvoid rr_cartesian_axes(real xleft, real xright, real ybottom, real ytop, real xstep=1, real ystep=1, bool useticks=false, bool complexplane=false, bool usegrid=true) {\n\nimport graph;\n\nreal i;\n\nif(complexplane) {\n\nlabel(\"$\\textnormal{Re}$\",(xright,0),SE);\n\nlabel(\"$\\textnormal{Im}$\",(0,ytop),NW);\n\n} else {\n\nlabel(\"$x$\",(xright+0.4,-0.5));\n\nlabel(\"$y$\",(-0.5,ytop+0.2));\n\n}\n\nylimits(ybottom,ytop);\n\nxlimits( xleft, xright);\n\nreal[] TicksArrx,TicksArry;\n\nfor(i=xleft+xstep; i<xright; i+=xstep) {\n\nif(abs(i) >0.1) {\n\nTicksArrx.push(i);\n\n}\n\n}\n\nfor(i=ybottom+ystep; i<ytop; i+=ystep) {\n\nif(abs(i) >0.1) {\n\nTicksArry.push(i);\n\n}\n\n}\n\nif(usegrid) {\n\nxaxis(BottomTop(extend=false), Ticks(\"%\", TicksArrx ,pTick=gray(0.22),extend=true),p=invisible);//,above=true);\n\nyaxis(LeftRight(extend=false),Ticks(\"%\", TicksArry ,pTick=gray(0.22),extend=true), p=invisible);//,Arrows);\n\n}\n\nif(useticks) {\n\nxequals(0, ymin=ybottom, ymax=ytop, p=axispen, Ticks(\"%\",TicksArry , pTick=black+0.8bp,Size=ticklength), above=true, Arrows(size=axisarrowsize));\n\nyequals(0, xmin=xleft, xmax=xright, p=axispen, Ticks(\"%\",TicksArrx , pTick=black+0.8bp,Size=ticklength), above=true, Arrows(size=axisarrowsize));\n\n} else {\n\nxequals(0, ymin=ybottom, ymax=ytop, p=axispen, above=true, Arrows(size=axisarrowsize));\n\nyequals(0, xmin=xleft, xmax=xright, p=axispen, above=true, Arrows(size=axisarrowsize));\n\n}\n\n};\n\nrr_cartesian_axes(-8,4,-6,6);\n\nreal f(real x) {return x^2/4+x-3;}\n\ndraw(graph(f,-8,4,operator ..), red);\n\n[/asy]",
+    "choices": null,
+    "answer": "-8",
+    "explanation": "First, we note that there are two points on the graph whose $y$-coordinates are $-3$. These are $(-4,-3)$ and $(0,-3)$. Therefore, if $f(f(f(x)))=-3$, then $f(f(x))$ equals $-4$ or $0$.\n\nThere are three points on the graph whose $y$-coordinates are $-4$ or $0$. These are $(-2,-4),$ $(-6,0),$ and $(2,0)$. Therefore, if $f(f(x))$ is $-4$ or $0$, then $f(x)$ equals $-2,$ $-6,$ or $2$.\n\nThere are four points on the graph whose $y$-coordinates are $-2$ or $2$ (and none whose $y$-coordinate is $-6$). The $x$-coordinates of these points are not integers, but we can use the symmetry of the graph (with respect to the vertical line $x=-2$) to deduce that if these points are $(x_1,-2),$ $(x_2,-2),$ $(x_3,2),$ and $(x_4,2),$ then $x_1+x_2=-4$ and $x_3+x_4=-4$. Therefore, the sum of all four $x$-coordinates is $\\boxed{-8}$.",
+    "difficulty": "Level 5",
+    "category": "algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_3",
+    "type": "open-ended",
+    "question": "The red parabola shown is the graph of the equation $x = ay^2 + by + c$.  Find $c$. (Assume that the graph has the standard unit scale.)\n\n[asy]\nsize(150);\nreal ticklen=3;\nreal tickspace=2;\n\nreal ticklength=0.1cm;\nreal axisarrowsize=0.14cm;\npen axispen=black+1.3bp;\nreal vectorarrowsize=0.2cm;\nreal tickdown=-0.5;\nreal tickdownlength=-0.15inch;\nreal tickdownbase=0.3;\nreal wholetickdown=tickdown;\nvoid rr_cartesian_axes(real xleft, real xright, real ybottom, real ytop, real xstep=1, real ystep=1, bool\n\nuseticks=false, bool complexplane=false, bool usegrid=true) {\n\nimport graph;\n\nreal i;\n\nif(complexplane) {\n\nlabel(\"$\\textnormal{Re}$\",(xright,0),SE);\n\nlabel(\"$\\textnormal{Im}$\",(0,ytop),NW);\n\n} else {\n\nlabel(\"$x$\",(xright+0.4,-0.5));\n\nlabel(\"$y$\",(-0.5,ytop+0.2));\n\n}\n\nylimits(ybottom,ytop);\n\nxlimits( xleft, xright);\n\nreal[] TicksArrx,TicksArry;\n\nfor(i=xleft+xstep; i<xright; i+=xstep) {\n\nif(abs(i) >0.1) {\n\nTicksArrx.push(i);\n\n}\n\n}\n\nfor(i=ybottom+ystep; i<ytop; i+=ystep) {\n\nif(abs(i) >0.1) {\n\nTicksArry.push(i);\n\n}\n\n}\n\nif(usegrid) {\n\nxaxis(BottomTop(extend=false), Ticks(\"%\", TicksArrx ,pTick=gray\n\n(0.22),extend=true),p=invisible);//,above=true);\n\nyaxis(LeftRight(extend=false),Ticks(\"%\", TicksArry ,pTick=gray(0.22),extend=true),\n\np=invisible);//,Arrows);\n\n}\n\nif(useticks) {\n\nxequals(0, ymin=ybottom, ymax=ytop, p=axispen, Ticks(\"%\",TicksArry ,\n\npTick=black+0.8bp,Size=ticklength), above=true, Arrows(size=axisarrowsize));\n\nyequals(0, xmin=xleft, xmax=xright, p=axispen, Ticks(\"%\",TicksArrx ,\n\npTick=black+0.8bp,Size=ticklength), above=true, Arrows(size=axisarrowsize));\n\n} else {\n\nxequals(0, ymin=ybottom, ymax=ytop, p=axispen, above=true, Arrows(size=axisarrowsize));\n\nyequals(0, xmin=xleft, xmax=xright, p=axispen, above=true, Arrows(size=axisarrowsize));\n\n}\n};\nreal lowerx, upperx, lowery, uppery;\nreal f(real x) {return -(x-2)*(x-2)/2+3;}\nlowery = -1;\nuppery = 5;\nrr_cartesian_axes(-4,4,lowery,uppery);\ndraw(reflect((0,0),(1,1))*(graph(f,lowery,uppery,operator ..)), red);\n[/asy]",
+    "choices": null,
+    "answer": "1",
+    "explanation": "The vertex of the parabola is $(3,2)$, so the equation of the parabola is of the form \\[x = a(y - 2)^2 + 3.\\] The parabola passes through the point $(1,4)$.  Substituting these values into the equation above, we get \\[1 = a(4 - 2)^2 + 3.\\] Solving for $a$, we find $a = -1/2$.  Hence, the equation of the parabola is given by \\[x = -\\frac{1}{2} (y - 2)^2 + 3 = -\\frac{1}{2} (y^2 - 4y + 4) + 3 = -\\frac{1}{2} y^2 + 2y + 1.\\] The answer is $\\boxed{1}$.\n\nAlternatively, the value of $x = ay^2 + by + c$ is $c$ when $y = 0$.  The parabola passes through the point $(1,0)$, so $c = \\boxed{1}$.",
+    "difficulty": "Level 5",
+    "category": "algebra",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_4",
+    "type": "open-ended",
+    "question": "How many three-digit numbers are multiples of neither 5 nor 7?",
+    "choices": null,
+    "answer": "618",
+    "explanation": "It's easy to count the number of three-digit numbers which are multiples of 5 or 7: the smallest multiple of 7 which is a three-digit number is $15 \\times 7 = 105$, and the largest multiple of 7 that is a three-digit number is $142 \\times 7 = 994$.  Therefore, there are $142-15+1 = 128$ three-digit numbers that are multiples of 7.  The smallest multiple of 5 that is a three-digit number is $20\\times 5 = 100$, and the largest multiple of 5 that is a three digit number is $199\\times 5 =995$. So there are $199-20+1=180$ multiples of 5.\n\nNow notice that we have counted some numbers twice: those multiples of $5\\times7=35$. The smallest multiple of 35 is $3\\times 35 = 105$, the largest multiple of 35 is $28\\times35 =980$. So there are $28-3+1=26$ multiples of 35.\n\nWe have 128 multiples of 7 and 180 multiples of 5, but we count 26 multiples twice.  So, there are a total of $128+180-26 = 282$ distinct three-digit numbers that are multiples of 5 or 7 (or both).   There are 900 three-digit numbers in total (from 100 to 999), so there are $900-282=\\boxed{618}$ three-digit numbers that are not multiples of 7 nor 5.",
+    "difficulty": "Level 5",
+    "category": "counting_and_probability",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_5",
+    "type": "open-ended",
+    "question": "A jar has $10$ red candies and $10$ blue candies. Terry picks two candies at random, then Mary picks two of the remaining candies at random. Given that the probability that they get the same color combination, irrespective of order, is $m/n,$ where $m$ and $n$ are relatively prime positive integers, find $m+n.$\n",
+    "choices": null,
+    "answer": "441",
+    "explanation": "The probability that Terry picks two red candies is $\\frac{10 \\cdot 9}{20 \\cdot 19} = \\frac{9}{38}$, and the probability that Mary picks two red candies after Terry chooses two red candies is $\\frac{7\\cdot8}{18\\cdot17} = \\frac{28}{153}$. So the probability that they both pick two red candies is $\\frac{9}{38} \\cdot \\frac{28}{153} = \\frac{14}{323}$. The same calculation works for the blue candies.\nThe probability that Terry picks two different candies is $\\frac{20\\cdot10}{20\\cdot19} = \\frac{10}{19}$, and the probability that Mary picks two different candies after Terry picks two different candies is $\\frac{18\\cdot 9}{18\\cdot 17} = \\frac{9}{17}$. Thus, the probability that they both choose two different candies is $\\frac{10}{19}\\cdot\\frac{9}{17} = \\frac{90}{323}$. Then the total probability is\n\\[2 \\cdot \\frac{14}{323} + \\frac{90}{323} = \\frac{118}{323}\\]\nand so the answer is $118 + 323 = \\boxed{441}$.\nIn the above calculations, we treated the choices as ordered; that is, Terry chose first one candy, then a second, and so on. We could also solve the problem using unordered choices. The probabilities calculated will all be the same, but the calculations will appear somewhat different. For instance, the probability that Mary chooses two red candies after Terry chose two red candies will have the form $\\frac{{8\\choose 2}}{{18 \\choose 2}}$, and the probability that Terry chooses two different candies will have the form $\\frac{{10\\choose 1}\\cdot{10\\choose 1}}{{20\\choose2}}$. It is not difficult to see that these yield the same results as our calculations above, as we would expect.",
+    "difficulty": "Level 5",
+    "category": "counting_and_probability",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_6",
+    "type": "open-ended",
+    "question": "Each page number of a 488-page book is printed one time in the book.  The first page is page 1 and the last page is page 488. When printing all of the page numbers, how many more 4's are printed than 8's?",
+    "choices": null,
+    "answer": "90",
+    "explanation": "Insert leading zeros if necessary to give every page number three digits.  Every digit is used an equal number of times in writing the digits 00, 01, 02, ..., 98, 99, so from page 1 to page 399, the number of 4's used and the number of 8's used are equal.\n\nFrom page 400 to page 488, there are 89 appearances of 4 as a hundreds digit versus 0 appearances of 8 as a hundreds digit.  All 10 numbers 440, 441, ..., 449 with 4 as the tens digit are printed, whereas only the 9 numbers 480, 481, ..., 488 with 8 as the tens digit are printed.  So 4 is used one more time than 8 as a tens digit.  Four and 8 appear 9 times each as a units digit in the numbers 400, 401, ..., 488, so there are no extra 4's in the units place.  In total, $89+1+0=\\boxed{90}$ more 4's are printed than 8's.",
+    "difficulty": "Level 5",
+    "category": "counting_and_probability",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_7",
+    "type": "open-ended",
+    "question": "In triangle $ABC,\\,$ angle $C$ is a right angle and the altitude from $C\\,$ meets $\\overline{AB}\\,$ at $D.\\,$ The lengths of the sides of $\\triangle ABC\\,$ are integers, $BD=29^3,\\,$ and $\\cos B=m/n\\,$, where $m\\,$ and $n\\,$ are relatively prime positive integers. Find $m+n.\\,$\n",
+    "choices": null,
+    "answer": "450",
+    "explanation": "Since $\\triangle ABC \\sim \\triangle CBD$, we have $\\frac{BC}{AB} = \\frac{29^3}{BC} \\Longrightarrow BC^2 = 29^3 AB$. It follows that $29^2 | BC$ and $29 | AB$, so $BC$ and $AB$ are in the form $29^2 x$ and $29 x^2$, respectively, where x is an integer.\nBy the Pythagorean Theorem, we find that $AC^2 + BC^2 = AB^2 \\Longrightarrow (29^2x)^2 + AC^2 = (29 x^2)^2$, so $29x | AC$. Letting $y = AC / 29x$, we obtain after dividing through by $(29x)^2$, $29^2 = x^2 - y^2 = (x-y)(x+y)$. As $x,y \\in \\mathbb{Z}$, the pairs of factors of $29^2$ are $(1,29^2)(29,29)$; clearly $y = \\frac{AC}{29x} \\neq 0$, so $x-y = 1, x+y= 29^2$. Then, $x = \\frac{1+29^2}{2} = 421$.\nThus, $\\cos B = \\frac{BC}{AB} = \\frac{29^2 x}{29x^2} = \\frac{29}{421}$, and $m+n = \\boxed{450}$.",
+    "difficulty": "Level 5",
+    "category": "geometry",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_8",
+    "type": "open-ended",
+    "question": "Let $P_{1}: y=x^{2}+\\frac{101}{100}$ and $P_{2}: x=y^{2}+\\frac{45}{4}$ be two parabolas in the Cartesian plane. Let $\\mathcal{L}$ be the common tangent line of $P_{1}$ and $P_{2}$ that has a rational slope. If $\\mathcal{L}$ is written in the form $ax+by=c$ for positive integers $a,b,c$ where $\\gcd(a,b,c)=1$, find $a+b+c$.\n",
+    "choices": null,
+    "answer": "11",
+    "explanation": "From the condition that $\\mathcal L$ is tangent to $P_1$ we have that the system of equations $ax + by = c$ and ${y = x^2 + \\frac{101}{100}}$ has exactly one solution, so $ax + b(x^2 + \\frac{101}{100}) = c$ has exactly one solution. A quadratic equation with only one solution must have discriminant equal to zero, so we must have $a^2 - 4\\cdot b \\cdot (\\frac{101}{100}b - c) = 0$ or equivalently $25a^2 -101b^2 + 100bc = 0$. Applying the same process to $P_2$, we have that $a(y^2 + \\frac{45}4) + by = c$ has a unique root so $b^2 - 4\\cdot a \\cdot (\\frac{45}4a - c) = 0$ or equivalently $b^2 - 45a^2 + 4ac = 0$. We multiply the first of these equations through by $a$ and the second through by $25b$ and subtract in order to eliminate $c$ and get $25a^3 + 1125 a^2b - 101ab^2 - 25b^3 = 0$. We know that the slope of $\\mathcal L$, $-\\frac b a$, is a rational number, so we divide this equation through by $-a^3$ and let $\\frac b a = q$ to get $25q^3 +101q^2 - 1125q - 25 = 0$. Since we're searching for a rational root, we can use the Rational Root Theorem to search all possibilities and find that $q = 5$ is a solution. (The other two roots are the roots of the quadratic equation $25q^2 + 226q +5 = 0$, both of which are irrational.) Thus $b = 5a$. Now we go back to one of our first equations, say $b^2 - 45a^2 + 4ac = 0$, to get $25a^2 - 45a^2 + 4ac = 0 \\Longrightarrow c = 5a$. (We can reject the alternate possibility $a = 0$ because that would give $a = b = 0$ and our \"line\" would not exist.) Then $a : b : c = 1 : 5 : 5$ and since the greatest common divisor of the three numbers is 1, $a = 1, b = 5, c = 5$ and $a + b + c = \\boxed{11}$.",
+    "difficulty": "Level 5",
+    "category": "geometry",
+    "source": "hendrycks_math"
+  },
+  {
+    "id": "MATH_9",
+    "type": "open-ended",
+    "question": "Let $EFGH$, $EFDC$, and $EHBC$ be three adjacent square faces of a cube, for which $EC = 8$, and let $A$ be the eighth vertex of the cube. Let $I$, $J$, and $K$, be the points on $\\overline{EF}$, $\\overline{EH}$, and $\\overline{EC}$, respectively, so that $EI = EJ = EK = 2$. A solid $S$ is obtained by drilling a tunnel through the cube. The sides of the tunnel are planes parallel to $\\overline{AE}$, and containing the edges, $\\overline{IJ}$, $\\overline{JK}$, and $\\overline{KI}$. The surface area of $S$, including the walls of the tunnel, is $m + n\\sqrt {p}$, where $m$, $n$, and $p$ are positive integers and $p$ is not divisible by the square of any prime. Find $m + n + p$.\n",
+    "choices": null,
+    "answer": "417",
+    "explanation": "[asy] import three; currentprojection = perspective(5,-40,12); defaultpen(linewidth(0.7)); pen l = linewidth(0.5) + linetype(\"10 2\");  triple S=(1,0,0), T=(2,0,2), U=(8,6,8), V=(8,8,6), W=(2,2,0), X=(6,8,8); draw((1,0,0)--(8,0,0)--(8,0,8)--(0,0,8)--(0,0,1)); draw((1,0,0)--(8,0,0)--(8,8,0)--(0,8,0)--(0,1,0),l); draw((0,8,0)--(0,8,8)); draw((0,8,8)--(0,0,8)--(0,0,1)); draw((8,8,0)--(8,8,6),l); draw((8,0,8)--(8,6,8)); draw((0,8,8)--(6,8,8));  draw(S--T--U--V--W--cycle); draw((0,0,1)--T--U--X--(0,2,2)--cycle); draw((0,1,0)--W--V--X--(0,2,2)--cycle); [/asy]           [asy] import three; currentprojection = perspective(5,40,12); defaultpen(linewidth(0.7)); pen l = linewidth(0.5) + linetype(\"10 2\");  triple S=(1,0,0), T=(2,0,2), U=(8,6,8), V=(8,8,6), W=(2,2,0), X=(6,8,8); draw((1,0,0)--(8,0,0)--(8,0,8),l); draw((8,0,8)--(0,0,8)); draw((0,0,8)--(0,0,1),l); draw((8,0,0)--(8,8,0)); draw((8,8,0)--(0,8,0)); draw((0,8,0)--(0,1,0),l); draw((0,8,0)--(0,8,8)); draw((0,0,8)--(0,0,1),l); draw((8,8,0)--(8,8,6)); draw((8,0,8)--(8,6,8)); draw((0,0,8)--(0,8,8)--(6,8,8));  draw(S--T--U--V--W--cycle); draw((0,0,1)--T--U--X--(0,2,2)--cycle); draw((0,1,0)--W--V--X--(0,2,2)--cycle); [/asy]\nSet the coordinate system so that vertex $E$, where the drilling starts, is at $(8,8,8)$. Using a little visualization (involving some similar triangles, because we have parallel lines) shows that the tunnel meets the bottom face (the xy plane one) in the line segments joining $(1,0,0)$ to $(2,2,0)$, and $(0,1,0)$ to $(2,2,0)$, and similarly for the other three faces meeting at the origin (by symmetry). So one face of the tunnel is the polygon with vertices (in that order), $S(1,0,0), T(2,0,2), U(8,6,8), V(8,8,6), W(2,2,0)$, and the other two faces of the tunnel are congruent to this shape.\nObserve that this shape is made up of two congruent trapezoids each with height $\\sqrt {2}$ and bases $7\\sqrt {3}$ and $6\\sqrt {3}$. Together they make up an area of $\\sqrt {2}(7\\sqrt {3} + 6\\sqrt {3}) = 13\\sqrt {6}$. The total area of the tunnel is then $3\\cdot13\\sqrt {6} = 39\\sqrt {6}$. Around the corner $E$ we're missing an area of $6$, the same goes for the corner opposite $E$ . So the outside area is $6\\cdot 64 - 2\\cdot 6 = 372$. Thus the the total surface area is $372 + 39\\sqrt {6}$, and the answer is $372 + 39 + 6 = \\boxed{417}$.",
+    "difficulty": "Level 5",
+    "category": "geometry",
+    "source": "hendrycks_math"
+  }
+]
