@@ -3,9 +3,6 @@
 ## 📌 Project Overview
 This project investigates the limitations of large language models (LLMs) in solving complex scientific and multi-step reasoning tasks.
 
-We construct a custom benchmark dataset and evaluate model performance in terms of:
---
----
 
 ## 📊 Dataset
 
@@ -21,13 +18,11 @@ Each dataset includes:
 - Explanation / Solution
 - Difficulty level
 
----
 
 ## 🧪 Methodology
 
 
 
----
 
 ## 📁 Files
 
@@ -35,5 +30,5 @@ Each dataset includes:
 - `test_dataset.json` → testing dataset  
 - `*.ipynb` → data processing & evaluation  
 
----
+
 
