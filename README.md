@@ -9,14 +9,30 @@ This project investigates the limitations of large language models (LLMs) in sol
 The dataset consists of multiple sources:
 
 - **MATH (Level 5)** – mathematical reasoning problems
-- **GPQA (Physics, Post-graduate level)** – scientific reasoning
+  - geometry
+  - algebra
+  - probability and counting
+  - number theory
+  - intermediate algebra
+- **GPQA ( Post-graduate level)** – scientific reasoning
+  - Physics
+  - Chemistry
+  - Biology
+  
 - **Codeforces (rating ≥ 2000)** – algorithmic reasoning
+- **BBH (Big-Bench Hard)** - general Reasoning
+  - web of lies
+  - temporal reasoning
+  - causal reasoning
 
 Each dataset includes:
+- Type
 - Question
+- Choices
 - Answer
 - Explanation / Solution
 - Difficulty level
+- Category
 
 
 ## 🧪 Methodology
