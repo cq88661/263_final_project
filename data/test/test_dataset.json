@@ -368,7 +368,7 @@
       "D": "12pm to 2pm"
     },
     "answer": "C",
-    "explanation": null,
+    "explanation": "James woke up at 7am, so he could not have gone before 7am. From 7am to 12pm, James was seen taking photos near the Eiffel Tower. From 12pm to 2pm, he was seen driving to the water park. From 2pm to 4pm, he was seen buying a phone at the electronics store. From 5pm to 6pm, he was seen buying lunch at the deli. The dance studio was closed after 6pm, so James could not have gone after 6pm.\n\nThe only time interval when James was free and the dance studio was still open was from 4pm to 5pm. Therefore, James could have gone to the dance studio between \\boxed{4\\text{pm to }5\\text{pm}}.",
     "difficulty": null,
     "category": "temporal_sequences",
     "source": "BBH"
@@ -384,7 +384,7 @@
       "D": "3pm to 7pm"
     },
     "answer": "C",
-    "explanation": null,
+    "explanation": "Steven woke up at 7am, so he could not have gone before 7am. From 7am to 10am, Steven was seen stretching at a yoga studio. From 1pm to 2pm, he was seen reading at the library. From 2pm to 3pm, he was seen working at the office. From 3pm to 7pm, he was seen watching a movie at the theater. From 7pm to 10pm, he was seen waiting at the train station. The gas station was closed after 10pm, so Steven could not have gone after 10pm.\n\nThe only time interval when Steven was free and the gas station was still open was from 10am to 1pm. Therefore, Steven could have gone to the gas station between \\boxed{10\\text{am to }1\\text{pm}}.",
     "difficulty": null,
     "category": "temporal_sequences",
     "source": "BBH"
@@ -400,7 +400,7 @@
       "D": "4pm to 8pm"
     },
     "answer": "D",
-    "explanation": null,
+    "explanation": "William woke up at 1pm, so he could not have gone before 1pm. From 1pm to 2pm, William was seen working at the office. From 2pm to 4pm, he was seen waiting at the train station. From 8pm to 10pm, he was seen taking photos near the Eiffel Tower. The soccer field was closed after 10pm, so William could not have gone after 10pm.\n\nThe only time interval when William was free and the soccer field was still open was from 4pm to 8pm. Therefore, William could have gone to the soccer field between \\boxed{4\\text{pm to }8\\text{pm}}.",
     "difficulty": null,
     "category": "temporal_sequences",
     "source": "BBH"
@@ -414,7 +414,7 @@
       "B": "No"
     },
     "answer": "B",
-    "explanation": null,
+    "explanation": "Jerry lies, so Jerry is not telling the truth. Kandi says that Jerry lies, which is true, so Kandi tells the truth. Fletcher says that Kandi lies, but Kandi actually tells the truth, so Fletcher lies. Ryan says that Fletcher lies, which is true, so Ryan tells the truth. Delfina says that Ryan lies, but Ryan actually tells the truth, so Delfina lies.\n\nTherefore, Delfina does not tell the truth, so the answer is \\boxed{No}.",
     "difficulty": null,
     "category": "web_of_lies",
     "source": "BBH"
@@ -428,7 +428,7 @@
       "B": "No"
     },
     "answer": "B",
-    "explanation": null,
+    "explanation": "Shaunda tells the truth, so Shaunda is truthful. Fidel says that Shaunda tells the truth, which is true, so Fidel tells the truth. Delbert says that Fidel tells the truth, which is true, so Delbert tells the truth. Bernita says that Delbert tells the truth, which is true, so Bernita tells the truth. Lorine says that Bernita lies, but Bernita actually tells the truth, so Lorine lies.\n\nTherefore, Lorine does not tell the truth, so the answer is \\boxed{No}.",
     "difficulty": null,
     "category": "web_of_lies",
     "source": "BBH"
@@ -442,7 +442,7 @@
       "B": "No"
     },
     "answer": "A",
-    "explanation": null,
+    "explanation": "Millicent lies, so Millicent is not telling the truth. Alexis says that Millicent lies, which is true, so Alexis tells the truth. Inga says that Alexis tells the truth, which is true, so Inga tells the truth. Christie says that Inga lies, but Inga actually tells the truth, so Christie lies. Gwenn says that Christie lies, which is true, so Gwenn tells the truth.\n\nTherefore, Gwenn tells the truth, so the answer is \\boxed{Yes}.",
     "difficulty": null,
     "category": "web_of_lies",
     "source": "BBH"
@@ -456,7 +456,7 @@
       "B": "No"
     },
     "answer": "A",
-    "explanation": null,
+    "explanation": "Joe delayed picking up his son by stopping to talk with friends. Because of this delay, the neighbor decided to take Joe's son home instead. On the way home, the neighbor's car was struck by a drunk driver, and Joe's son was injured.\n\nAlthough Joe did not directly cause the accident, his delay set off a chain of events that led to his son being in the neighbor's car at the time of the crash. In typical causal reasoning, people often consider such contributing actions in the causal chain as causes, even if the final outcome also depends on other independent factors.\n\nTherefore, a typical person would say that Joe did cause his son's injury, so the answer is \\boxed{Yes}.",
     "difficulty": null,
     "category": "causal_judgement",
     "source": "BBH"
@@ -470,7 +470,7 @@
       "B": "No"
     },
     "answer": "A",
-    "explanation": null,
+    "explanation": "Billy's signal was red, meaning he was supposed to stop, but he ignored it and drove onto the bridge. Suzy followed her green signal and also drove onto the bridge. The bridge collapses only if both trains are on it at the same time; neither train alone is sufficient to cause the collapse.\n\nBilly's action was necessary for the collapse in this situation, because if he had obeyed the red signal and stopped, only Suzy's train would have been on the bridge and it would not have collapsed. In typical causal reasoning, people tend to assign causal responsibility to agents who violate rules or norms and whose actions are critical to producing the outcome.\n\nTherefore, a typical person would say that Billy did cause the bridge to collapse, so the answer is \\boxed{Yes}.",
     "difficulty": null,
     "category": "causal_judgement",
     "source": "BBH"
@@ -484,7 +484,7 @@
       "B": "No"
     },
     "answer": "A",
-    "explanation": null,
+    "explanation": "The car requires at least one Bartlett battery to start, and initially it had none. Billy bought one battery, and independently, Suzy also bought another battery. When they installed the batteries, the car was able to start because at least one battery was present.\n\nAlthough Billy's battery was not strictly necessary (since Suzy's battery alone would have been sufficient), his action still contributed to bringing about the outcome. In typical causal reasoning, people often judge that actions which contribute to an outcome—even if they are redundant—can still be considered causes (a situation known as overdetermination).\n\nTherefore, a typical person would say that Billy did cause the car to be able to start, so the answer is \\boxed{Yes}.",
     "difficulty": null,
     "category": "causal_judgement",
     "source": "BBH"
