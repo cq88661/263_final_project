@@ -1,4 +1,15 @@
 *.csv
 .vscode/
-__pycache__
+__pycache__/
 *.pyc
+.env
+
+CS263_Pipeline_Plan.md
+
+# HPO scratch runs (large, disposable)
+pipeline/checkpoints/optuna_runs/
+
+# Optuna SQLite DB (local only)
+pipeline/results/optuna.db
+
+pipeline/tests

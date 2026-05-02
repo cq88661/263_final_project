@@ -1,0 +1,18 @@
+# CS263 Pipeline — Python dependencies
+# Activate: conda activate llm-testing
+# Install:  pip install -r requirements.txt
+
+# Already installed in llm-testing
+torch>=2.9.1
+transformers>=5.0.0
+mlx>=0.30.1
+mlx-lm>=0.30.0
+
+# Install these
+optuna>=3.6.0
+wandb>=0.17.0
+pyyaml>=6.0
+matplotlib>=3.8.0
+datasets>=2.18.0
+tqdm>=4.66.0
+pytest>=8.0.0
