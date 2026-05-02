@@ -214,58 +214,49 @@
   {
     "id": "BBH_1",
     "type": "multiple-choice",
-    "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. On a branch, there are seven birds: a hawk, a raven, a hummingbird, a falcon, an owl, a quail, and a cardinal. The quail is to the left of the hummingbird. The raven is to the right of the hummingbird. The cardinal is the second from the left. The owl is to the left of the cardinal. The raven is the third from the right. The falcon is the rightmost.",
+    "question": "Today, Jennifer went to the art show. Between what times could they have gone?\nWe know that:\nJennifer woke up at 8am.\nLisa saw Jennifer buying clothes at the mall from 8am to 9am.\nSteven saw Jennifer walking towards the Statue of Liberty from 9am to 10am.\nSarah saw Jennifer sitting on a rooftop from 10am to 2pm.\nLinda saw Jennifer taking photos near the Leaning Tower of Pisa from 4pm to 6pm.\nAndrew saw Jennifer working out at the gym from 6pm to 8pm.\nThe art show was closed after 8pm.\nBetween what times could Jennifer have gone to the art show?",
     "choices": {
-      "A": "The hawk is the leftmost",
-      "B": "The raven is the leftmost",
-      "C": "The hummingbird is the leftmost",
-      "D": "The falcon is the leftmost",
-      "E": "The owl is the leftmost",
-      "F": "The quail is the leftmost",
-      "G": "The cardinal is the leftmost"
+      "A": "2pm to 4pm",
+      "B": "8am to 9am",
+      "C": "9am to 10am",
+      "D": "6pm to 8pm"
     },
-    "answer": "E",
+    "answer": "A",
     "explanation": null,
     "difficulty": null,
-    "category": "logical_deduction_seven_objects",
+    "category": "temporal_sequences",
     "source": "BBH"
   },
   {
     "id": "BBH_2",
     "type": "multiple-choice",
-    "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are seven vehicles: a limousine, a convertible, a station wagon, a minivan, a bus, a tractor, and a truck. The minivan is the oldest. The truck is older than the station wagon. The truck is newer than the limousine. The bus is newer than the convertible. The bus is older than the tractor. The limousine is newer than the tractor.",
+    "question": "Today, William went to the coffee shop. Between what times could they have gone?\nWe know that:\nWilliam woke up at 9am.\nLinda saw William playing tennis at the tennis court from 9am to 11am.\nEmily saw William attending class at the school from 11am to 1pm.\nNancy saw William walking in the garden from 6pm to 7pm.\nThe coffee shop was closed after 7pm.\nBetween what times could William have gone to the coffee shop?",
     "choices": {
-      "A": "The limousine is the second-oldest",
-      "B": "The convertible is the second-oldest",
-      "C": "The station wagon is the second-oldest",
-      "D": "The minivan is the second-oldest",
-      "E": "The bus is the second-oldest",
-      "F": "The tractor is the second-oldest",
-      "G": "The truck is the second-oldest"
+      "A": "6pm to 7pm",
+      "B": "9am to 11am",
+      "C": "11am to 1pm",
+      "D": "1pm to 6pm"
     },
-    "answer": "B",
+    "answer": "D",
     "explanation": null,
     "difficulty": null,
-    "category": "logical_deduction_seven_objects",
+    "category": "temporal_sequences",
     "source": "BBH"
   },
   {
     "id": "BBH_3",
     "type": "multiple-choice",
-    "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In a golf tournament, there were seven golfers: Amy, Eve, Ada, Rob, Dan, Mel, and Joe. Joe finished third. Dan finished last. Eve finished first. Mel finished below Rob. Ada finished above Joe. Rob finished third-to-last.",
+    "question": "Today, Ashley went to the bookstore. Between what times could they have gone?\nWe know that:\nAshley woke up at 7am.\nLeslie saw Ashley buying a bike at the bike shop from 11am to 12pm.\nSusan saw Ashley working out at the gym from 12pm to 4pm.\nElizabeth saw Ashley waiting at the train station from 4pm to 7pm.\nEmily saw Ashley taking photos near the Leaning Tower of Pisa from 7pm to 9pm.\nThe bookstore was closed after 9pm.\nBetween what times could Ashley have gone to the bookstore?",
     "choices": {
-      "A": "Amy finished last",
-      "B": "Eve finished last",
-      "C": "Ada finished last",
-      "D": "Rob finished last",
-      "E": "Dan finished last",
-      "F": "Mel finished last",
-      "G": "Joe finished last"
+      "A": "7pm to 9pm",
+      "B": "11am to 12pm",
+      "C": "12pm to 4pm",
+      "D": "7am to 11am"
     },
-    "answer": "E",
+    "answer": "D",
     "explanation": null,
     "difficulty": null,
-    "category": "logical_deduction_seven_objects",
+    "category": "temporal_sequences",
     "source": "BBH"
   },
   {
