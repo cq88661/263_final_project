@@ -49,6 +49,7 @@ def run_inference(
       raw_output       — full model response
     """
     from mlx_lm import generate
+    from mlx_lm.sample_utils import make_sampler
 
     model, tokenizer = get_model(adapter_path=adapter_path)
 
@@ -61,7 +62,7 @@ def run_inference(
         model, tokenizer,
         prompt=formatted,
         max_tokens=max_tokens,
-        temp=temperature,
+        sampler=make_sampler(temp=temperature),
         verbose=False,
     )
 

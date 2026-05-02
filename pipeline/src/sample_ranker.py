@@ -39,6 +39,7 @@ Respond with a single digit (1-5) only. Do not explain."""
 
 def score_explanation(item: dict, model, tokenizer) -> float:
     from mlx_lm import generate
+    from mlx_lm.sample_utils import make_sampler
 
     prompt = _RUBRIC_PROMPT.format(
         question=item["question"][:600],
@@ -49,7 +50,8 @@ def score_explanation(item: dict, model, tokenizer) -> float:
     formatted = tokenizer.apply_chat_template(
         messages, tokenize=False, add_generation_prompt=True
     )
-    raw = generate(model, tokenizer, prompt=formatted, max_tokens=64, temp=0.0, verbose=False)
+    raw = generate(model, tokenizer, prompt=formatted, max_tokens=64,
+                   sampler=make_sampler(temp=0.0), verbose=False)
     return _parse_score(raw)
 
 
