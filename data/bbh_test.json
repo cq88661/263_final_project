@@ -2,58 +2,49 @@
   {
     "id": "BBH_1",
     "type": "multiple-choice",
-    "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells seven fruits: loquats, cantaloupes, watermelons, apples, oranges, pears, and mangoes. The oranges are the second-cheapest. The apples are less expensive than the pears. The mangoes are more expensive than the cantaloupes. The mangoes are the third-cheapest. The watermelons are the second-most expensive. The loquats are the third-most expensive.",
+    "question": "Today, James went to the dance studio. Between what times could they have gone?\nWe know that:\nJames woke up at 7am.\nThomas saw James taking photos near the Eiffel Tower from 7am to 12pm.\nMark saw James driving to the water park from 12pm to 2pm.\nAnthony saw James buying a phone at the electronics store from 2pm to 4pm.\nSarah saw James buying lunch at the deli from 5pm to 6pm.\nThe dance studio was closed after 6pm.\nBetween what times could James have gone to the dance studio?",
     "choices": {
-      "A": "The loquats are the second-most expensive",
-      "B": "The cantaloupes are the second-most expensive",
-      "C": "The watermelons are the second-most expensive",
-      "D": "The apples are the second-most expensive",
-      "E": "The oranges are the second-most expensive",
-      "F": "The pears are the second-most expensive",
-      "G": "The mangoes are the second-most expensive"
+      "A": "2pm to 4pm",
+      "B": "7am to 12pm",
+      "C": "4pm to 5pm",
+      "D": "12pm to 2pm"
     },
     "answer": "C",
     "explanation": null,
     "difficulty": null,
-    "category": "logical_deduction_seven_objects",
+    "category": "temporal_sequences",
     "source": "BBH"
   },
   {
     "id": "BBH_2",
     "type": "multiple-choice",
-    "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. A fruit stand sells seven fruits: watermelons, oranges, mangoes, cantaloupes, kiwis, pears, and peaches. The pears are the second-cheapest. The peaches are more expensive than the cantaloupes. The peaches are less expensive than the mangoes. The cantaloupes are more expensive than the kiwis. The oranges are the fourth-most expensive. The watermelons are the second-most expensive.",
+    "question": "Today, Steven went to the gas station. Between what times could they have gone?\nWe know that:\nSteven woke up at 7am.\nAshley saw Steven stretching at a yoga studio from 7am to 10am.\nWilliam saw Steven reading at the library from 1pm to 2pm.\nJennifer saw Steven working at the office from 2pm to 3pm.\nMichael saw Steven watching a movie at the theater from 3pm to 7pm.\nMary saw Steven waiting at the train station from 7pm to 10pm.\nThe gas station was closed after 10pm.\nBetween what times could Steven have gone to the gas station?",
     "choices": {
-      "A": "The watermelons are the third-cheapest",
-      "B": "The oranges are the third-cheapest",
-      "C": "The mangoes are the third-cheapest",
-      "D": "The cantaloupes are the third-cheapest",
-      "E": "The kiwis are the third-cheapest",
-      "F": "The pears are the third-cheapest",
-      "G": "The peaches are the third-cheapest"
+      "A": "7am to 10am",
+      "B": "7pm to 10pm",
+      "C": "10am to 1pm",
+      "D": "3pm to 7pm"
     },
-    "answer": "D",
+    "answer": "C",
     "explanation": null,
     "difficulty": null,
-    "category": "logical_deduction_seven_objects",
+    "category": "temporal_sequences",
     "source": "BBH"
   },
   {
     "id": "BBH_3",
     "type": "multiple-choice",
-    "question": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph. In an antique car show, there are seven vehicles: a limousine, a sedan, a tractor, a motorcyle, a minivan, a hatchback, and a truck. The minivan is newer than the limousine. The tractor is the second-newest. The truck is older than the sedan. The minivan is older than the truck. The hatchback is newer than the tractor. The motorcyle is the fourth-newest.",
+    "question": "Today, William went to the soccer field. Between what times could they have gone?\nWe know that:\nWilliam woke up at 1pm.\nSarah saw William working at the office from 1pm to 2pm.\nMary saw William waiting at the train station from 2pm to 4pm.\nSusan saw William taking photos near the Eiffel Tower from 8pm to 10pm.\nThe soccer field was closed after 10pm.\nBetween what times could William have gone to the soccer field?",
     "choices": {
-      "A": "The limousine is the fourth-newest",
-      "B": "The sedan is the fourth-newest",
-      "C": "The tractor is the fourth-newest",
-      "D": "The motorcyle is the fourth-newest",
-      "E": "The minivan is the fourth-newest",
-      "F": "The hatchback is the fourth-newest",
-      "G": "The truck is the fourth-newest"
+      "A": "8pm to 10pm",
+      "B": "1pm to 2pm",
+      "C": "2pm to 4pm",
+      "D": "4pm to 8pm"
     },
     "answer": "D",
     "explanation": null,
     "difficulty": null,
-    "category": "logical_deduction_seven_objects",
+    "category": "temporal_sequences",
     "source": "BBH"
   },
   {
