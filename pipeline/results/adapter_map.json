@@ -1,0 +1,5 @@
+{
+  "sft_k1_quality": "/Users/kaichengchu/Desktop/ucla/nlp/263_final_project/pipeline/checkpoints/sft_k1_quality",
+  "sft_k2_quality": "/Users/kaichengchu/Desktop/ucla/nlp/263_final_project/pipeline/checkpoints/sft_k2_quality",
+  "sft_k3_quality": "/Users/kaichengchu/Desktop/ucla/nlp/263_final_project/pipeline/checkpoints/sft_k3_quality"
+}

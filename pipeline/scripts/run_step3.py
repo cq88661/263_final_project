@@ -62,11 +62,21 @@ def main():
 
     # ── Hyperparameter search ──────────────────────────────────────────────
     if args.skip_hpo:
-        best_params = {
-            "lr": 1e-4, "lora_rank": 8,
-            "lora_layers": 16, "num_iters": 100, "batch_size": 4,
-        }
-        print("Skipping HPO. Using defaults:", best_params)
+        import optuna
+        from pipeline.src.config import OPTUNA_DB_PATH
+        if OPTUNA_DB_PATH.exists():
+            study = optuna.load_study(
+                study_name="cs263-sft",
+                storage=f"sqlite:///{OPTUNA_DB_PATH}",
+            )
+            best_params = study.best_params
+            print("Skipping HPO. Loaded best params from existing study:", best_params)
+        else:
+            best_params = {
+                "lr": 1e-4, "lora_rank": 8,
+                "lora_layers": 16, "num_iters": 100, "batch_size": 4,
+            }
+            print("Skipping HPO. Using defaults:", best_params)
     else:
         full_set    = select_ablation_items(ranked_items, k=3, ordering="quality")
         study       = run_optuna_search(full_set, n_trials=args.n_trials)
@@ -85,6 +95,9 @@ def main():
     # ── Inference for each checkpoint ─────────────────────────────────────
     for run_name, adapter_path in adapters.items():
         condition = f"step3_{run_name}"
+        if not (adapter_path / "adapters.safetensors").exists():
+            print(f"\n[SKIP] {condition}: training failed, no adapter weights at {adapter_path}")
+            continue
         print(f"\nInference: {condition}")
         results   = run_inference_for_adapter(test_data, adapter_path, condition)
         out_path  = RESULTS_DIR / f"{condition}.json"

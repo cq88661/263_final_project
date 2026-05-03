@@ -13,3 +13,4 @@ pipeline/checkpoints/optuna_runs/
 pipeline/results/optuna.db
 
 pipeline/tests
+wandb

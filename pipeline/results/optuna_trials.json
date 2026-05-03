@@ -1,0 +1,122 @@
+[
+  {
+    "trial": 0,
+    "val_loss": 0.775,
+    "params": {
+      "lr": 7.008608808258973e-05,
+      "lora_rank": 8,
+      "lora_layers": 8,
+      "num_iters": 50,
+      "batch_size": 2
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 1,
+    "val_loss": 1.232,
+    "params": {
+      "lr": 0.00017807020905940432,
+      "lora_rank": 8,
+      "lora_layers": 16,
+      "num_iters": 100,
+      "batch_size": 4
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 2,
+    "val_loss": 1.148,
+    "params": {
+      "lr": 1.0072583339631564e-05,
+      "lora_rank": 16,
+      "lora_layers": 8,
+      "num_iters": 200,
+      "batch_size": 4
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 3,
+    "val_loss": 0.691,
+    "params": {
+      "lr": 1.3162838818990769e-05,
+      "lora_rank": 4,
+      "lora_layers": 8,
+      "num_iters": 100,
+      "batch_size": 4
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 4,
+    "val_loss": 1.959,
+    "params": {
+      "lr": 0.0003016543014293186,
+      "lora_rank": 4,
+      "lora_layers": 16,
+      "num_iters": 50,
+      "batch_size": 4
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 5,
+    "val_loss": 0.81,
+    "params": {
+      "lr": 1.0689759429835278e-05,
+      "lora_rank": 16,
+      "lora_layers": 16,
+      "num_iters": 200,
+      "batch_size": 2
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 6,
+    "val_loss": 0.784,
+    "params": {
+      "lr": 3.7470155782534556e-05,
+      "lora_rank": 16,
+      "lora_layers": 16,
+      "num_iters": 200,
+      "batch_size": 2
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 7,
+    "val_loss": 0.79,
+    "params": {
+      "lr": 1.0450166451847512e-05,
+      "lora_rank": 16,
+      "lora_layers": 16,
+      "num_iters": 200,
+      "batch_size": 2
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 8,
+    "val_loss": 0.89,
+    "params": {
+      "lr": 0.00014064070937063752,
+      "lora_rank": 4,
+      "lora_layers": 8,
+      "num_iters": 100,
+      "batch_size": 2
+    },
+    "state": "TrialState.COMPLETE"
+  },
+  {
+    "trial": 9,
+    "val_loss": 0.721,
+    "params": {
+      "lr": 3.1634785955180735e-05,
+      "lora_rank": 16,
+      "lora_layers": 16,
+      "num_iters": 100,
+      "batch_size": 2
+    },
+    "state": "TrialState.COMPLETE"
+  }
+]

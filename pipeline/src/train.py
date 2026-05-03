@@ -30,21 +30,27 @@ from pipeline.src.config import (
 # Training data preparation
 # ---------------------------------------------------------------------------
 
-_TRAIN_TEMPLATE = (
+_PROMPT_TEMPLATE = (
     "<|im_start|>user\n"
     "Solve step by step: {question}<|im_end|>\n"
     "<|im_start|>assistant\n"
+)
+
+_COMPLETION_TEMPLATE = (
     "<think>\n{explanation}\n</think>\n"
     "{answer_line}"
     "<|im_end|>"
 )
 
 
-def _format_example(item: dict) -> str:
+def _format_prompt(item: dict) -> str:
+    return _PROMPT_TEMPLATE.format(question=item["question"])
+
+
+def _format_completion(item: dict) -> str:
     answer      = item.get("answer")
     answer_line = f"Answer: {answer}\n" if answer else ""
-    return _TRAIN_TEMPLATE.format(
-        question    = item["question"],
+    return _COMPLETION_TEMPLATE.format(
         explanation = (item.get("explanation") or "").strip(),
         answer_line = answer_line,
     )
@@ -93,6 +99,10 @@ def prepare_training_data(items: list[dict], output_dir: Path) -> Path:
     # none can be held out — reuse the last training item as a proxy.
     if not valid_items:
         valid_items = [train_items[-1]]
+    # mlx-lm enforces: validation set size >= batch_size (max batch_size=4).
+    # Replicate items until we have at least 4 to satisfy the constraint.
+    while len(valid_items) < 4:
+        valid_items += valid_items[:4 - len(valid_items)]
     _write_jsonl(valid_items, output_dir / "valid.jsonl")
 
     return output_dir
@@ -101,7 +111,11 @@ def prepare_training_data(items: list[dict], output_dir: Path) -> Path:
 def _write_jsonl(items: list[dict], path: Path):
     with open(path, "w") as f:
         for item in items:
-            f.write(json.dumps({"text": _format_example(item)}, ensure_ascii=False) + "\n")
+            record = {
+                "prompt":     _format_prompt(item),
+                "completion": _format_completion(item),
+            }
+            f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
 # ---------------------------------------------------------------------------

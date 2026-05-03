@@ -1,0 +1,16 @@
+adapter_path: /Users/kaichengchu/Desktop/ucla/nlp/263_final_project/pipeline/checkpoints/sft_k3_quality
+batch_size: 4
+data: /var/folders/xf/jjb8zk6s0t15ws8j10j2zl3m0000gn/T/tmpbe0f75wp
+iters: 100
+learning_rate: 1.3162838818990769e-05
+lora_parameters:
+  dropout: 0.0
+  rank: 4
+  scale: 4.0
+mask_prompt: true
+model: mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit
+num_layers: 8
+steps_per_eval: 20
+steps_per_report: 10
+train: true
+val_batches: -1
